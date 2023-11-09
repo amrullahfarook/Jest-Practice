@@ -12,3 +12,15 @@ export function squareRoot(number: number) {
 
   return estimate;
 }
+
+// checks wether a given date range is more than a month
+export function isMultipleMonths(startDate: Date, endDate: Date): boolean {
+    const difference: number = Math.abs(startDate.getTime() - endDate.getTime())
+    const totalDays: number = difference / 1000/60/60/24
+
+    if(totalDays < 60) {
+        return false
+    }
+
+    return true
+}
